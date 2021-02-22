@@ -1,352 +1,132 @@
 'use strict'
 function generateRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
+
 let hour = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
-const seattle = {
-    min: 23,
-    max: 65,
-    name: 'seattle',
-    customerNumber: [],
-    cookieNumber: [],
-    average: 6.3,
-    totalCookieNumber: 0,
+function City(min, max, name, average,) {
+    this.min = min;
+    this.max = max;
+    this.name = name;
+    this.customerNumber = [];
+    this.cookieNumber = [];
+    this.average = average;
+    this.totalCookieNumber = 0;
+};
+
+City.prototype.getCookieNumber = function () {
+    for (let i = 0; i < hour.length; i++) {
+        let cookie = Math.ceil(generateRandomNumber(this.min, this.max) * this.average);
+        this.cookieNumber.push(cookie);
+        this.totalCookieNumber += cookie;
+    };
+};
+City.prototype.render = function () {
+    const parentElement = document.getElementById('SalmonCookieShop');
+    const articleElement = document.createElement('article');
+    parentElement.appendChild(articleElement);
 
 
-    // getCustomerNumber: function () {
-    //     for (let i = 0; i < hour.length; i++) {
-    //         let customer = Math.ceil(generateRandomNumber(this.min, this.max));
-    //         this.customerNumber.push(customer);
+    const tableElement = document.createElement('table');
+    articleElement.appendChild(tableElement);
 
-    //     },
-        getCookieNumber: function () {
-            for (let i = 0; i < hour.length; i++) {
-                let cookie = Math.ceil(generateRandomNumber(this.min, this.max) * this.average);
-                this.cookieNumber.push(cookie);
-                this.totalCookieNumber += cookie ;
+    const tr1Element = document.createElement('tr');
+    tableElement.appendChild(tr1Element);
 
-            }
-        },
-
-        getCustomerNumber: function () {
-            for (let i=0 ; i< hour.length; i++) {
-                let customer = Math.ceil(generateRandomNumber(this.min, this.max));
-                this.customerNumber.push(customer);
-            }
-        },
+    const th1Element = document.createElement('th');
+    tr1Element.appendChild(th1Element);
+    th1Element.textContent = `Name of city `;
 
 
+    for (let i = 0; i < hour.length; i++) {
+        const th1Element = document.createElement('th');
+        tr1Element.appendChild(th1Element);
+        th1Element.textContent = `${hour[i]}`;
+    };
 
-        render: function () {
-            const parentElement = document.getElementById('SalmonCookieShop');
+    const th3Element = document.createElement('th');
+    tr1Element.appendChild(th3Element);
+    th3Element.textContent = `Daily of hour Location`;
 
-            // Create Element
-            // append element to parent element
-            // set text content to the element 
 
-            const articleElement = document.createElement('article');
-            parentElement.appendChild(articleElement);
+    const tr2Element = document.createElement('tr');
+    tableElement.appendChild(tr2Element);
 
-            const h2Element = document.createElement('h2');
-            articleElement.appendChild(h2Element);
-            h2Element.textContent = this.name;
 
-            const ulElement = document.createElement('ul');
-            articleElement.appendChild(ulElement);
+    const td1Element = document.createElement('td');
+    tr2Element.appendChild(td1Element);
+    td1Element.textContent = `Seatle `;
 
 
 
-            for (let i = 0; i < hour.length; i++) {
-                const liElement = document.createElement('li');
-                ulElement.appendChild(liElement);
-                liElement.textContent = `${hour[i]} : ${this.cookieNumber[i]} cookie.`;
+    const tr3Element = document.createElement('tr');
+    tableElement.appendChild(tr3Element);
 
-            }
-            const liElement = document.createElement('li');
-            ulElement.appendChild(liElement);
-            liElement.textContent = `Total: ${this.totalCookieNumber} : cookei.`;
+    const td2Element = document.createElement('td');
+    tr3Element.appendChild(td2Element);
+    td2Element.textContent = `Dubai`;
 
-        },
+    const tr4Element = document.createElement('tr');
+    tableElement.appendChild(tr4Element);
+
+    const td3Element = document.createElement('td');
+    tr4Element.appendChild(td3Element);
+    td3Element.textContent = `Paris`;
+
+    const tr5Element = document.createElement('tr');
+    tableElement.appendChild(tr5Element);
+
+    const td4Element = document.createElement('td');
+    tr5Element.appendChild(td4Element);
+    td4Element.textContent = `Lima`;
+
+    const tr6Element = document.createElement('tr');
+    tableElement.appendChild(tr6Element);
+
+    const th2Element = document.createElement('th');
+    tr6Element.appendChild(th2Element);
+    th2Element.textContent = `Total`;
 
 
-    }
-// seattle.getCookieNumber();
-// seattle.getCustomerNumber();
-//seattle.render();
-console.log(seattle);
-    seattle.getCookieNumber();
-    seattle.getCustomerNumber () ;
-    seattle.render();
+};
 
-    
-    const tokyo = {
-        min: 3,
-        max: 24,
-        name: 'tokyo',
-        customerNumber: [],
-        cookieNumber: [],
-        average: 1.2,
-        totalCookieNumber: 0,
-    
-    
-       
-            getCookieNumber: function () {
-                for (let i = 0; i < hour.length; i++) {
-                    let cookie = Math.ceil(generateRandomNumber(this.min, this.max) * this.average);
-                    this.cookieNumber.push(cookie);
-                    this.totalCookieNumber += cookie ;
-    
-                }
-            },
-    
-            getCustomerNumber: function () {
-                for (let i=0 ; i< hour.length; i++) {
-                    let customer = Math.ceil(generateRandomNumber(this.min, this.max));
-                    this.customerNumber.push(customer);
-                }
-            },
-    
-    
-    
-            render: function () {
-                const parentElement = document.getElementById('SalmonCookieShop');
-    
-                // Create Element
-                // append element to parent element
-                // set text content to the element 
-    
-                const articleElement = document.createElement('article');
-                parentElement.appendChild(articleElement);
-    
-                const h2Element = document.createElement('h2');
-                articleElement.appendChild(h2Element);
-                h2Element.textContent = this.name;
-    
-                const ulElement = document.createElement('ul');
-                articleElement.appendChild(ulElement);
-    
-    
-    
-                for (let i = 0; i < hour.length; i++) {
-                    const liElement = document.createElement('li');
-                    ulElement.appendChild(liElement);
-                    liElement.textContent = `${hour[i]} : ${this.cookieNumber[i]} cookie.`;
-    
-                }
-                const liElement = document.createElement('li');
-                ulElement.appendChild(liElement);
-                liElement.textContent = `Total: ${this.totalCookieNumber} : cookei.`;
-    
-            },
-    
-    
-        }
-    
-    console.log(tokyo);
-    tokyo.getCookieNumber();
-    tokyo.getCustomerNumber () ;
-    tokyo.render();
+const seatlt = new City(23, 65, 'seatle', 6.3);
+seatlt.getCookieNumber();
+seatlt.render();
+console.log(seatlt);
 
-    const dubai = {
-        min: 11,
-        max: 38,
-        name: 'dubai',
-        customerNumber: [],
-        cookieNumber: [],
-        average: 3.7,
-        totalCookieNumber: 0,
-    
-    
-       
-            getCookieNumber: function () {
-                for (let i = 0; i < hour.length; i++) {
-                    let cookie = Math.ceil(generateRandomNumber(this.min, this.max) * this.average);
-                    this.cookieNumber.push(cookie);
-                    this.totalCookieNumber += cookie ;
-    
-                }
-            },
-    
-            getCustomerNumber: function () {
-                for (let i=0 ; i< hour.length; i++) {
-                    let customer = Math.ceil(generateRandomNumber(this.min, this.max));
-                    this.customerNumber.push(customer);
-                }
-            },
-    
-    
-    
-            render: function () {
-                const parentElement = document.getElementById('SalmonCookieShop');
-    
-                // Create Element
-                // append element to parent element
-                // set text content to the element 
-    
-                const articleElement = document.createElement('article');
-                parentElement.appendChild(articleElement);
-    
-                const h2Element = document.createElement('h2');
-                articleElement.appendChild(h2Element);
-                h2Element.textContent = this.name;
-    
-                const ulElement = document.createElement('ul');
-                articleElement.appendChild(ulElement);
-    
-    
-    
-                for (let i = 0; i < hour.length; i++) {
-                    const liElement = document.createElement('li');
-                    ulElement.appendChild(liElement);
-                    liElement.textContent = `${hour[i]} : ${this.cookieNumber[i]} cookie.`;
-    
-                }
-                const liElement = document.createElement('li');
-                ulElement.appendChild(liElement);
-                liElement.textContent = `Total: ${this.totalCookieNumber} : cookei.`;
-    
-            },
-    
-    
-        }
-    
-    console.log(dubai);
-    dubai.getCookieNumber();
-    dubai.getCustomerNumber () ;
-    dubai.render();
+const tokyo = new City(3, 24, 'tokoy', 1.2);
+tokyo.getCookieNumber();
+tokyo.render();
+console.log(tokyo);
 
-    const paris = {
-        min: 20,
-        max: 38,
-        name: 'paris',
-        customerNumber: [],
-        cookieNumber: [],
-        average: 2.3,
-        totalCookieNumber: 0,
-    
-    
-       
-            getCookieNumber: function () {
-                for (let i = 0; i < hour.length; i++) {
-                    let cookie = Math.ceil(generateRandomNumber(this.min, this.max) * this.average);
-                    this.cookieNumber.push(cookie);
-                    this.totalCookieNumber += cookie ;
-    
-                }
-            },
-    
-            getCustomerNumber: function () {
-                for (let i=0 ; i< hour.length; i++) {
-                    let customer = Math.ceil(generateRandomNumber(this.min, this.max));
-                    this.customerNumber.push(customer);
-                }
-            },
-    
-    
-    
-            render: function () {
-                const parentElement = document.getElementById('SalmonCookieShop');
-    
-                // Create Element
-                // append element to parent element
-                // set text content to the element 
-    
-                const articleElement = document.createElement('article');
-                parentElement.appendChild(articleElement);
-    
-                const h2Element = document.createElement('h2');
-                articleElement.appendChild(h2Element);
-                h2Element.textContent = this.name;
-    
-                const ulElement = document.createElement('ul');
-                articleElement.appendChild(ulElement);
-    
-    
-    
-                for (let i = 0; i < hour.length; i++) {
-                    const liElement = document.createElement('li');
-                    ulElement.appendChild(liElement);
-                    liElement.textContent = `${hour[i]} : ${this.cookieNumber[i]} cookie.`;
-    
-                }
-                const liElement = document.createElement('li');
-                ulElement.appendChild(liElement);
-                liElement.textContent = `Total: ${this.totalCookieNumber} : cookei.`;
-    
-            },
-    
-    
-        }
-    
-    console.log(paris);
-    paris.getCookieNumber();
-    paris.getCustomerNumber () ;
-    paris.render();
+const dubai = new City(11, 38, 'dubai', 3.7);
+dubai.getCookieNumber();
+dubai.render();
+console.log(dubai);
+function generateRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
+const paris = new City(20, 38, 'paris', 2.3);
+paris.getCookieNumber();
+paris.render();
+console.log(paris);
 
-    const lima = {
-        min: 2,
-        max: 16,
-        name: 'lima',
-        customerNumber: [],
-        cookieNumber: [],
-        average: 4.6,
-        totalCookieNumber: 0,
-    
-    
-       
-            getCookieNumber: function () {
-                for (let i = 0; i < hour.length; i++) {
-                    let cookie = Math.ceil(generateRandomNumber(this.min, this.max) * this.average);
-                    this.cookieNumber.push(cookie);
-                    this.totalCookieNumber += cookie ;
-    
-                }
-            },
-    
-            getCustomerNumber: function () {
-                for (let i=0 ; i< hour.length; i++) {
-                    let customer = Math.ceil(generateRandomNumber(this.min, this.max));
-                    this.customerNumber.push(customer);
-                }
-            },
-    
-    
-    
-            render: function () {
-                const parentElement = document.getElementById('SalmonCookieShop');
-    
-                // Create Element
-                // append element to parent element
-                // set text content to the element 
-    
-                const articleElement = document.createElement('article');
-                parentElement.appendChild(articleElement);
-    
-                const h2Element = document.createElement('h2');
-                articleElement.appendChild(h2Element);
-                h2Element.textContent = this.name;
-    
-                const ulElement = document.createElement('ul');
-                articleElement.appendChild(ulElement);
-    
-    
-    
-                for (let i = 0; i < hour.length; i++) {
-                    const liElement = document.createElement('li');
-                    ulElement.appendChild(liElement);
-                    liElement.textContent = `${hour[i]} : ${this.cookieNumber[i]} cookie.`;
-    
-                }
-                const liElement = document.createElement('li');
-                ulElement.appendChild(liElement);
-                liElement.textContent = `Total: ${this.totalCookieNumber} : cookei.`;
-    
-            },
-    
-    
-        }
-    
-    console.log(lima);
-    lima.getCookieNumber();
-    lima.getCustomerNumber () ;
-    lima.render();
+const lima = new City(3, 1, 'lima', 1.2);
+lima.getCookieNumber();
+lima.render();
+console.log(lima);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
