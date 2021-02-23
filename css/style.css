@@ -1,1 +1,42 @@
 
+body {
+    background-color: salmon;
+    align-items: center;
+    
+    
+}
+
+body  h1 {
+    text-align: center;
+    height: 20px;
+}
+ 
+body  section img { 
+    width: 200px;
+    
+}
+ 
+body h3 {
+    color: brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+ 
+body ul li {
+    color:crimson;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+#SalmonCookieShop
+td, th {
+    border: 3px solid blueviolet;
+    padding: 5px;
+    text-align: center;
+
+
+}
+th {
+    background: cornflowerblue;
+    color: crimson;
+}
