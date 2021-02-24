@@ -54,14 +54,16 @@ const tablHeader = function () {
     th3.textContent = 'Daily of location';
 
 };
-
-
-
 tablHeader();
+
+
+
+
 const newCity = function () {
     const formElement = document.getElementById('addNewCityForm');
     formElement.addEventListener('submit', function (event) {
         event.preventDefault();
+        
         // const tr2 = document.createElement('tr');
         // table.appendChild(tr2);
         const cityName = event.target.cityName.value;
@@ -73,11 +75,14 @@ const newCity = function () {
         city.getCookieNumber();
         city.render();
         console.log(city.allCity);
-
-
+        // shift.tableFooter();
+        // 
+         tableFooter();
+     document.getElementById('myTable').deleteRaw(6);
     });
     City.allCity = [];
-};
+}; 
+//      
 newCity();
 
 
@@ -108,6 +113,7 @@ City.prototype.render = function () {
 
 };
 
+
 const seattle = new City(23, 65, 'Seattle', [], [], 6.3);
 seattle.getCookieNumber();
 seattle.render();
@@ -137,25 +143,27 @@ console.log(lima);
 console.log(City.allCity);
 
 
-// const tableFooter = function () {
-//     const tableElement = document.getElementById('myTable');
-//     const tr = document.createElement('tr');
-//     tableElement.appendChild(tr);
-//     const th1 = document.createElement('th');
-//     tr.appendChild(th1);
-//     th1.textContent = 'total';
-//     for (let i = 0; i < hour.length; i++) {
-//         const th2 = document.createElement('th');
-//         tr.appendChild(th2);
-//         th2.textContent = seattle.cookieNumber[i] + paris.cookieNumber[i] + dubai.cookieNumber[i] + tokoy.cookieNumber[i] + lima.cookieNumber[i];
-//     }
 
-//     const th3 = document.createElement('th');
-//     tr.appendChild(th3);
-//     th3.textContent = seattle.totalCookieNumber + dubai.totalCookieNumber + tokoy.totalCookieNumber + lima.totalCookieNumber + paris.totalCookieNumber;
+const tableFooter = function () {
+    const tableElement = document.getElementById('myTable');
+    const tr = document.createElement('tr');
+    tableElement.appendChild(tr);
+    const th1 = document.createElement('th');
+    tr.appendChild(th1);
+    th1.textContent = 'total';
+    for (let i = 0; i < hour.length; i++) {
+        const th2 = document.createElement('th');
+        tr.appendChild(th2);
+        th2.textContent = seattle.cookieNumber[i] + paris.cookieNumber[i] + dubai.cookieNumber[i] + tokoy.cookieNumber[i] + lima.cookieNumber[i];
+    }
 
-// };
-// tableFooter();
+    const th3 = document.createElement('th');
+    tr.appendChild(th3);
+    th3.textContent = seattle.totalCookieNumber + dubai.totalCookieNumber + tokoy.totalCookieNumber + lima.totalCookieNumber + paris.totalCookieNumber ;
+
+};
+
+tableFooter();
 
 
     // const th3Element = document.createElement('th');
