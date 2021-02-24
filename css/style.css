@@ -29,14 +29,56 @@ body ul li {
 }
 
 #SalmonCookieShop
+table {
+    width: 100%;
+    line-height: 20px;
+    padding-top: 30px;
+}
+
+
 td, th {
     border: 3px solid blueviolet;
     padding: 5px;
     text-align: center;
+    border-radius: 5px;
 
 
 }
 th {
     background: cornflowerblue;
-    color: crimson;
+    color: blue;
+}
+
+body h2 {
+    background-color: rgb(231, 228, 228);
+    width: min-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+form {
+    padding-top: 20px;
+    width: auto;
+    border-color: blue;
+    
+    
+}
+  
+form  fieldset {
+    padding: 20px;
+    border-color: blue;
+    border-radius: 5px;
+    
+}
+
+form fieldset input {
+    border-color: blue;
+    border-radius: 5px;
+}
+
+form fieldset button {
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color:rgb(159, 183, 226);
+
 }
