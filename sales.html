@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
 </head>
-
 <body>
-    <h2><a href="https://tasnimwheebi.github.io/cookie-stand/index"> index</a></h2>
-    <form id="addNewCityForm">
+    
+    <h1></h1>
+    <main>
+
+    <!-- Make form     -->
+    <form id="ADD-NEW-LOCATION">
+      <p><a href="index.html">Index</a></p>
+        <!-- Make fieldset -->
         <fieldset>
-            <legend>Add new City</legend>
-            <label for="cityName"> City Name </label>
-            <input type="text" id="cityName" name="city_name">
+           <!-- Legend for fieldset -->
+           <legend>add new location</legend>
 
-            <label for="minCustomer"> Min number of customer</label>
-            <input type="number" id="minCustomer" name="minCustomer">
+           <!-- Add label -->
+           <label for="name">city name</label>
+           <!-- Determine the data type -->
+           <input type="text" id="name" name="city_name">
 
-            <label for="maxCustomer"> Max number of customer</label>
-            <input type="number" id="maxCustomer" name="maxCustomer">
+           <label for="min">min.num of customers</label>
+           <input type="number" id="min" name="min_num_of_customers">
 
-            <label for="averageCookieSales"> Average of Cookies sales</label>
-            <input type="number" id="averageCookieSales" name="averageCookieSales" step="any" min="0">
-            <label1 for="checkValue"> Make sure all the Information is true</label1>
+           <label for="max">max.num of customers</label>
+           <input type="number" id="max" name="max_num_of_customers">
+
+           <label for="avarage">avarage</label>
+           <input type="number" step="any" min="0" id="avarage" name="Avarage">
+
+           <!-- Add submit button to sava data  -->
+           <label1 for="checkValue"> Make sure all the Information is true</label1>
             <input type="checkbox" id="checkValue" name="checkValue">
-           
-            <button type="submit"> Click To Add A city </button>
+           <button type="submit"> Click To Add A city </button>
             
 
-            <button type="reset"> clear </button>
+           <button type="reset"> clear </button>
+           
 
 
         </fieldset>
-    </form>
-    <div id="SalmonCookieShop"></div>
-
-
+    </form>    
+    <div id="SALAMON"> </div>    
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="JS/app.js"></script>
+    
 </body>
-
-
-
-<script src="js/app.js"></script>
-
 </html>
